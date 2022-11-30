@@ -3,6 +3,9 @@
 ## Day-1- React-and-JS-Practice
 
 ### Fetch an API with Axios & Fetch
+
+#### CodeSandbox Link : https://codesandbox.io/s/day-1-simple-fetching-data-muvllb
+
 ```
 import axios from "axios";
 import { useEffect, useState } from "react";
