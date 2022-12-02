@@ -1,4 +1,4 @@
-### Day-2-Debouncing
+### Day-3-Debouncing
 
 #### CodeSandbox Link : https://codesandbox.io/s/day-3-debouncing-7mnmsv
 
