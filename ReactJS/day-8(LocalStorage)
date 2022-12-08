@@ -1,43 +1,51 @@
-### Day-7 useCallback- Avoid unnecessary re-renders with useCallback
+### Day-8 LocalStorage - Browsers Store-House 
 
 #### CodeSandbox Link : https://codesandbox.io/s/day-8-localstorage-0jr2gl
 
-👉 Avoid unnecessary re-renders with useCallback ! 🔆
+👉 📦 LocalStorage - Browsers Store-House  🔆
 
-⚙️ Usage
-    🏃‍♀️ Skipping re-rendering of components
-    🎊 Updating state from a memoized callback
-    🔥 Preventing an Effect from firing too often
-    🛠️ Optimizing a custom Hook     
+⚙️ localStorage is a web storage object in JavaScript that allows users to save data as key-value pairs.
 
 
-⚙️ By default, when a component re-renders, React re-renders all of its children recursively..
+⚙️ localStorage is often used to add dark mode to applications or to save a to-do item in To-do lists apps and there are a bunch of other use cases.
 
-👉 By wrapping a function in useCallback, you ensure that it’s the same function between the re-renders (until dependencies change).  
-
-🎯 The difference between useMemo and useCallback.
-    👉 useMemo caches the result of calling your function
-    👉 useCallback caches the function itself. Unlike useMemo, it does not call the function you provide. Instead, it caches the function you provided.
-
+👉 LocalStorage object consists of 5 main methods.
+   📦 etItem(): use to add data to localStorage
+   📦 getItem(): use to get data from localStorage
+   📦 removeItem(): use to remove data from localStorage
+   📦 clear(): use to delete all the data from localStorage
+   📦 key(): returns the name of the key from the Storage object.
 
 Code Example: 
 
 ```
 import React, { useState, useCallback } from "react";
+import { React } from "react";
 
-export default function App() {
-  const [count, setCount] = useState(0);
+function App() {
+  //save data
+  const saveData = () =>localStorage.setItem('Object 1', "test object");
 
-  const onClick = useCallback((c) => {
-    console.log("update!");
-    setCount(c);
-  }, []);
-
+  //get data
+  const getData = () =>{
+    var data = localStorage.getItem("Object 1")
+    alert(data)
+  }
+  //delete data
+  const deleteData = () =>localStorage.removeItem("Object 1")
+  
+   //delete All data
+  const deleteAllData = () =>localStorage.removeItem("Object 1")
+  
   return (
     <div>
-      <h1>Count: {count}</h1>
-      <button onClick={() => onClick(count + 1)}>Increase Count</button>
+      <button onClick={saveData}>Save!</button>
+      <button onClick={getData}>Display Info!</button>
+      <button onClick={deleteData}>Clear Data</button>
+      <button onClick={deleteAllData}>Clear All Data</button>
     </div>
   );
 }
+
+export default App;
 ```
