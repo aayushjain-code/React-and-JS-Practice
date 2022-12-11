@@ -1,0 +1,69 @@
+### Day-11 Controlled and Uncontrolled Components in React
+
+ 👋 ⚛️ Controlled and Uncontrolled Components in React 🔆
+
+ The React state will always act as "the source of truth".
+
+
+⚙️ Controlled Components
+    👉 Controlled components are forms that are handled entirely by a React component and a hook called useState.
+    👉 useState is a hook that automatically refreshes the application whenever a change is made to its state variable (prop). 
+    👉 Form elements become controlled elements once the value is set to a prop.
+    👉 It will track every change done to the form (every input down to the letter)
+
+
+
+⚙️ Uncontrolled Components
+    👉 Uncontrolled components are controlled by the DOM instead of an individual component.
+    👉 Uncontrolled components use the useRef attribute. You can use useRef as a way to access values from the DOM.
+    👉 We first bring in the useRef hook then we use a ref attribute in our JSX to give the current value to our ref variable. 
+    👉 This gives us access to the submitted form information.
+
+
+Code Example: 
+
+```
+// Controlled Components
+
+import React, { useState } from "react";
+
+function Form() {
+    const [name, setName] = useState("");
+
+    console.log(name);
+
+    return (
+        <form>
+            <input type="text" value={name} onChange=
+                {(e) => setName(e.target.value)} />
+            <button type="submit">Submit</button>
+        </form>
+    );
+}
+
+export default Form;
+-------------------------------------------------------------
+// Uncontrolled Component
+
+import React, { useRef } from "react";
+
+function Form() {
+
+    const ref = useRef();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(ref.current.value)
+    };
+
+    return (
+        <form>
+            <input type="text" ref={ref} />
+            <button type="submit" onClick= 
+               {handleSubmit}>Submit</button>
+        </form>
+    );
+}
+
+export default Form;
+```
