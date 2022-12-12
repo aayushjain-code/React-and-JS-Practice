@@ -1,0 +1,15 @@
+### Day-12 👋 ⚛️ React Query- The "missing" data-fetching library for React🔆
+
+ React Query- The "missing" data-fetching library for React🔆
+
+React Query is a library for fetching and caching data in React applications.
+
+It provides a declarative API for fetching, storing, and retrieving data. React Query is designed to be used with React Hooks.
+
+⚙️ Why React Query?
+👉 It can help make your application more responsive by caching data and automatically refetching it when necessary.
+
+👉 React Query can improve the performance of your application by batching requests and avoiding unnecessary network traffic.
+
+👉 Makes it easier to handle errors by providing a builtin error handling mechanism.
+
